@@ -1,0 +1,53 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header, footer{
+    height: 60px;
+}
+
+header, main, footer{
+    border: 1px solid black;
+
+}
+
+header{
+    background-color: blue;
+
+}
+
+main{
+    height: calc(100vh - 150px);
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    padding: 10px 0px;
+    background-color: red;
+
+}
+
+main div{
+    flex-grow: 1;
+    height: 100%;
+    background-color: yellow;
+    border: 1px solid black;
+
+}
+
+.dobro{
+    flex-grow: 2;
+}
+
+footer{
+    background-color: green;
+
+}
+
