@@ -56,3 +56,20 @@ img{
     height: 30%;
     object-fit: cover;
 }
+
+@media screen and (max-width: 768px){
+    main{
+        height: auto;
+    }
+    main div{
+        width: 45%;
+    }
+    
+}
+
+@media screen and (max-width: 576px){
+    main div{
+        width: 100%;
+    }
+    
+}
