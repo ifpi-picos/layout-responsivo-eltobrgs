@@ -33,7 +33,7 @@ footer {
 
 /* Define as propriedades do cabeçalho */
 header {
-    background-color: blue;
+    background-color: purple;
     position: relative;
     top: 0;
     width: 100%;
@@ -46,55 +46,70 @@ main {
     flex-wrap: wrap;
     gap: 10px;
     padding: 10px 0px;
-    background-color: red;
+    background-color: orange;
 }
 
 /* Define as propriedades das divs dentro do corpo principal */
 main div {
     flex-basis: 100%;
-    height: 100%;
-    background-color: yellow;
+    min-height: calc(100%-10px);
+    background-color: #fff;
     border: 1px solid black;
 }
-
-/* Define a classe "dobro" para as divs que ocupam metade da largura */
-.dobro {
-    flex-basis: calc(50% - 10px);
+p{
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    color: black;
 }
+.pikachu{
+    background-color: yellow;
+}
+.litten{
+    background-color: red;
+
+}
+.mudkip{
+    background-color: blue;
+}
+.bulbasauro{
+    background-color: green;
+}
+
 
 /* Define as propriedades do rodapé */
 footer {
-    background-color: green;
+    background-color: yellow;
     position: relative;
     bottom: 0;
     width: 100%;
+    text-align: center;
 }
 
 /* Define as propriedades das imagens */
 img {
-    width: 100%;
-    height: auto;
+    width: 90%;
+    height: 70%;
+    margin-bottom: 20px;
 }
 
-/* Define as regras de mídia para telas com largura mínima de 577px */
-@media screen and (min-width: 577px) {
+/* Para telas de computador (maiores que 1024px) */
+@media screen and (min-width: 1025px) {
     main div {
-        flex-basis: calc(50% - 10px);
+        flex-basis: calc(33.33% - 10px); /* Divide a largura em 3 colunas */
     }
 }
 
-/* Define as regras de mídia para telas com largura máxima de 576px */
-@media screen and (max-width: 576px) {
+/* Para tablets (entre 768px e 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
     main div {
-        flex-basis: 100%;
+        flex-basis: calc(50% - 10px); /* Divide a largura em 2 colunas */
     }
-    
-    img {
-        width: calc(50% - 10px);
-    }
-    
-    main div.dobro {
-        flex-basis: 100%;
-        font-size: 150%;
+}
+
+/* Para celulares (menores que 768px) */
+@media screen and (max-width: 767px) {
+    main div {
+        flex-basis: 100%; /* Apenas 1 coluna */
     }
 }
