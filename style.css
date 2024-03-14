@@ -1,8 +1,17 @@
-*{
+/**
+ * Arquivo: style.css
+ * Descrição: Este arquivo contém estilos CSS para um layout responsivo.
+ * Autor: [Seu nome]
+ * Data: [Data de criação]
+ */
+
+/* Define o box-sizing para border-box em todos os elementos */
+* {
     box-sizing: border-box;
 }
 
-body{
+/* Define as propriedades do corpo do documento */
+body {
     margin: 0;
     min-height: 100vh;
     display: flex;
@@ -10,66 +19,83 @@ body{
     justify-content: space-between;
 }
 
-header, footer{
+/* Define a altura do cabeçalho e rodapé */
+header,
+footer {
     height: 60px;
 }
 
-header, main, footer{
+/* Define a borda para o cabeçalho, corpo e rodapé */
+header,
+main,
+footer {
     border: 1px solid black;
-
 }
 
-header{
+/* Define as propriedades do cabeçalho */
+header {
     background-color: blue;
-
+    position: relative;
+    top: 0;
+    width: 100%;
 }
 
-main{
-    height: calc(100vh - 150px);
+/* Define as propriedades do corpo principal */
+main {
+    min-height: 100vh;
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
     gap: 10px;
     padding: 10px 0px;
     background-color: red;
-
 }
 
-main div{
-    flex-grow: 1;
+/* Define as propriedades das divs dentro do corpo principal */
+main div {
+    flex-basis: 100%;
     height: 100%;
     background-color: yellow;
     border: 1px solid black;
-
 }
 
-.dobro{
-    flex-grow: 2;
+/* Define a classe "dobro" para as divs que ocupam metade da largura */
+.dobro {
+    flex-basis: calc(50% - 10px);
 }
 
-footer{
+/* Define as propriedades do rodapé */
+footer {
     background-color: green;
-
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
-img{
-    width: 30%;
-    height: 30%;
-    object-fit: cover;
+/* Define as propriedades das imagens */
+img {
+    width: 100%;
+    height: auto;
 }
 
-@media screen and (max-width: 768px){
-    main{
-        height: auto;
+/* Define as regras de mídia para telas com largura mínima de 577px */
+@media screen and (min-width: 577px) {
+    main div {
+        flex-basis: calc(50% - 10px);
     }
-    main div{
-        width: 45%;
+}
+
+/* Define as regras de mídia para telas com largura máxima de 576px */
+@media screen and (max-width: 576px) {
+    main div {
+        flex-basis: 100%;
     }
     
-}
-
-@media screen and (max-width: 576px){
-    main div{
-        width: 100%;
+    img {
+        width: calc(50% - 10px);
     }
     
+    main div.dobro {
+        flex-basis: 100%;
+        font-size: 150%;
+    }
 }
