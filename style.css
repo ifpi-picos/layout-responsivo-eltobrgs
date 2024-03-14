@@ -55,6 +55,7 @@ main div {
     min-height: calc(100%-10px);
     background-color: #fff;
     border: 1px solid black;
+    overflow: auto;
 }
 p{
     text-align: center;
